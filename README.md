@@ -7,8 +7,10 @@ Projects:
 
 
 ### Stats
-| Stat          | customer-svc  | customer-svc-sb  | diff % |
-| ------------- |:-------------:| -----:| ----- :|
-| uber jar size | 12826333 | 19484021 | 52% |
-| native image size| 59175120   |   N/A | |
-| startup time  | 866ms      |   1176 | 36% |
+
+| Stat           | customer-svc  | customer-svc-sb  | diff |
+| -------------- | -------------:| -----:| --------:| ----:|
+| uber jar size  | 12826333 | 19484021 | 52% |
+| native bin size| 59175120 | N/A | |
+| startup time   | 866ms | 1176ms | 36% |
+
