@@ -1,0 +1,6 @@
+### build steps
+
+```
+./gradlew bootJar
+
+```
