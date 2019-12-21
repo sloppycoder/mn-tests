@@ -1,0 +1,6 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: minikube.local:5000/dev/customer-svc
+      jib: {}

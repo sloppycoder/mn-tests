@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-svc
+spec:
+  ports:
+    - port: 8080
+      name: http
+  type: LoadBalancer
+  selector:
+    app: web
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-svc
+spec:
+  selector:
+    matchLabels:
+      app: customer-svc
+  template:
+    metadata:
+      labels:
+        app: customer-svc
+    spec:
+      containers:
+        - name: customer-svc
+          image: minikube.local:5000/dev/customer-svc
+          ports:
+            - containerPort: 8080

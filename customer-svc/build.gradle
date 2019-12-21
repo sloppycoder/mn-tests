@@ -1,6 +1,7 @@
 plugins {
     id "net.ltgt.apt-eclipse" version "0.21"
     id "com.github.johnrengelman.shadow" version "5.0.0"
+    id "com.google.cloud.tools.jib" version "1.8.0"
     id "application"
 }
 
@@ -48,6 +49,14 @@ mainClassName = "org.vino9.Application"
 test {
     useJUnitPlatform()
 }
+
+jib {
+    allowInsecureRegistries = true
+    to {
+        image = "minikube.local:5000/dev/customer-svc"
+    }
+}
+
 tasks.withType(JavaCompile){
     options.encoding = "UTF-8"
     options.compilerArgs.add('-parameters')
